@@ -1,53 +1,54 @@
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class InputHandler {
 
-    private Scanner scanner;
-
-    public void setScanner(Scanner scanner) {
-        this.scanner = scanner;
+    private String setInput(Scanner scan) {
+        return scan.nextLine();
     }
 
-    public int getInput(String prompt) {
-        System.out.println(prompt);
-        return checkInputIsInt(scanner.nextInt());
-    }
-
-    public int checkInputIsInt(int value){
-
-    }
-
-    public void readSelection(String prompt, int a, int b) {
-
-        System.out.println(prompt);
+    public boolean isInputValidInteger(String input) {
         try {
-            int selection = Integer.parseInt(String.valueOf(scanner.nextInt()));
-            handleSelection(selection, a, b);
-        } catch (InputMismatchException e) {
-            System.out.println("Invalid input. Provide an integer please");
-            scanner.nextLine();
-            readSelection(prompt, a, b);
+            Integer.parseInt(input);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
         }
     }
 
-    public void handleSelection(int selection, int a, int b) {
-        switch (selection) {
-            case 1:
-                System.out.println("Result: " + Calculator.add(a, b));
-                break;
-            case 2:
-                System.out.println("Result: " + Calculator.subtract(a, b));
-                break;
-            case 3:
-                System.out.println("Result: " + Calculator.multiply(a, b));
-                break;
-            case 4:
-                System.out.println("Result: " + Calculator.divide(a, b));
-                break;
-            default:
-                System.out.println("Invalid selection.");
-                break;
+    private void handleInvalidInput() {
+        System.out.println("Please provide a valid integer.");
+    }
+
+    public int getInput(Scanner scan, String promptMessage) {
+        while (true) {
+            System.out.print(promptMessage);
+            String input = setInput(scan);
+            if (!isInputValidInteger(input)) {
+                handleInvalidInput();
+            } else {
+                return Integer.parseInt(input);
+            }
         }
+    }
+
+    public int setChoice(Scanner scan, String prompt) {
+        System.out.println(prompt);
+        return scan.nextInt();
+    }
+
+    public int handleChoice(int selection, int a, int b) {
+        int result = 0;
+        switch (selection) {
+            case 1 ->  result = Calculator.add(a, b);
+            case 2 ->  result = Calculator.subtract(a, b);
+            case 3 ->  result = Calculator.multiply(a, b);
+            case 4 ->  result = Calculator.divide(a, b);
+            default -> System.out.println("Invalid selection.");
+        }
+        return result;
+    }
+
+    public void printResult(int result) {
+        System.out.println("Result: " + result);
     }
 }
