@@ -2,17 +2,21 @@ import java.util.Scanner;
 
 public class InputHandler {
     Scanner scan = new Scanner(System.in);
-    public int readInt(String prompt){
+
+    public int readInt(String prompt) {
         System.out.println(prompt);
         return scan.nextInt();
     }
 
-    public int readSelection(String prompt){
-        System.out.println(prompt);
-        int selection = scan.nextInt();
-        return selection;
-    }
+    public void handleSelection(String prompt) {
 
-    public void handleSelection(int selection) {
+        System.out.println(prompt);
+
+        try {
+            int selection = Integer.parseInt(String.valueOf(scan.nextInt()));
+            System.out.println(selection);
+        } catch (Exception e) {
+            System.out.println("Provide an integer please");
+        }
     }
 }
