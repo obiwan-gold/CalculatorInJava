@@ -2,21 +2,27 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class InputHandler {
-    Scanner scan = new Scanner(System.in);
+
+    private Scanner scanner;
+
+    public void setScanner(Scanner scanner) {
+        this.scanner = scanner;
+    }
+
     public int readInt(String prompt) {
         System.out.println(prompt);
-        return scan.nextInt();
+        return scanner.nextInt();
     }
 
     public void readSelection(String prompt, int a, int b) {
 
         System.out.println(prompt);
         try {
-            int selection = Integer.parseInt(String.valueOf(scan.nextInt()));
+            int selection = Integer.parseInt(String.valueOf(scanner.nextInt()));
             handleSelection(selection, a, b);
         } catch (InputMismatchException e) {
             System.out.println("Invalid input. Provide an integer please");
-            scan.nextLine();
+            scanner.nextLine();
             readSelection(prompt, a, b);
         }
     }
