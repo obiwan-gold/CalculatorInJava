@@ -1,20 +1,30 @@
 import org.junit.jupiter.api.Test;
 
-class CalculatorTest {
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+public class CalculatorTest {
 
     @Test
-    void add() {
+    public void add() {
+        int result = Calculator.add(1, 2);
+        assertEquals(3, result);
     }
 
     @Test
-    void subtract() {
+    public void subtract() {
+        int result = Calculator.subtract(1, 2);
+        assertEquals(-1, result, "Addition failed: expected 5, but got " + result);
     }
 
     @Test
-    void multiply() {
+    public void multiply() {
+        int result = Calculator.multiply(1, 2);
+        assertEquals(2, result, "Multiplication failed: expected 2, but got " + result);
     }
 
     @Test
-    void divide() {
+    public void divide() {
+        int result = Calculator.divide(4, 2);
+        assertEquals(2, result, "Division failed: expected 2, but got " + result);
     }
 }
