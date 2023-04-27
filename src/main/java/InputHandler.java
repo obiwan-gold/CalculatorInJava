@@ -3,7 +3,6 @@ import java.util.Scanner;
 
 public class InputHandler {
     Scanner scan = new Scanner(System.in);
-    int result;
     public int readInt(String prompt) {
         System.out.println(prompt);
         return scan.nextInt();
@@ -16,7 +15,7 @@ public class InputHandler {
             int selection = Integer.parseInt(String.valueOf(scan.nextInt()));
             handleSelection(selection, a, b);
         } catch (InputMismatchException e) {
-            System.out.println("Invalid input. bvcnProvide an integer please");
+            System.out.println("Invalid input. Provide an integer please");
             scan.nextLine();
             readSelection(prompt, a, b);
         }
@@ -25,16 +24,16 @@ public class InputHandler {
     public void handleSelection(int selection, int a, int b) {
         switch (selection) {
             case 1:
-                System.out.println(Calculator.add(a, b));
+                System.out.println("Result: " + Calculator.add(a, b));
                 break;
             case 2:
-                System.out.println(Calculator.subtract(a, b));
+                System.out.println("Result: " + Calculator.subtract(a, b));
                 break;
             case 3:
-                System.out.println(Calculator.multiply(a, b));
+                System.out.println("Result: " + Calculator.multiply(a, b));
                 break;
             case 4:
-                System.out.println(Calculator.divide(a, b));
+                System.out.println("Result: " + Calculator.divide(a, b));
                 break;
             default:
                 System.out.println("Invalid selection.");
