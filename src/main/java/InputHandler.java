@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class InputHandler {
@@ -14,8 +15,10 @@ public class InputHandler {
         try {
             int selection = Integer.parseInt(String.valueOf(scan.nextInt()));
             handleSelection(selection, a, b);
-        } catch (Exception e) {
-            System.out.println("Provide an integer please");
+        } catch (InputMismatchException e) {
+            System.out.println("Invalid input. bvcnProvide an integer please");
+            scan.nextLine();
+            readSelection(prompt, a, b);
         }
     }
 
