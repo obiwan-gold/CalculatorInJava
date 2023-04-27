@@ -9,9 +9,13 @@ public class InputHandler {
         this.scanner = scanner;
     }
 
-    public int readInt(String prompt) {
+    public int getInput(String prompt) {
         System.out.println(prompt);
-        return scanner.nextInt();
+        return checkInputIsInt(scanner.nextInt());
+    }
+
+    public int checkInputIsInt(int value){
+
     }
 
     public void readSelection(String prompt, int a, int b) {

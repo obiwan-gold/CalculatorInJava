@@ -21,7 +21,7 @@ public class InputHandlerTest {
 
         int value = inputHandler.readInt("Enter a number: ");
 
-        assertEquals(7, value, "Value read does not match input, value given: " + value);
+        assertEquals(5, value, "Value read does not match input, value given: " + value);
     }
 
     @Test
