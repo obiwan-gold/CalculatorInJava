@@ -2,6 +2,7 @@ package com.obingold.calculator;
 
 public class InputValidator {
 
+    // houses all validation
     public boolean validateInput(String input){
         // First check if input is blank
         if (isInputEmpty(input)) {
@@ -10,7 +11,6 @@ public class InputValidator {
         // Second check if input is an integer
         return isInputValidInteger(input);
     }
-
     public Boolean isInputEmpty(String input){
         // Empty string check
         return input.isEmpty();
@@ -23,6 +23,4 @@ public class InputValidator {
             return false;
         }
     }
-
-
 }
