@@ -1,3 +1,5 @@
+package com.obingold.calculator;
+
 import java.util.Scanner;
 
 public class Main {

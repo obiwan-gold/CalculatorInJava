@@ -1,34 +1,32 @@
+package com.obingold.calculator;
+
 import java.util.Scanner;
 
 public class InputHandler {
+    private final InputValidator inputValidator;
+
+    public InputHandler(){
+        this.inputValidator = new InputValidator();
+    }
+    public int getInput(Scanner scan, String promptMessage) {
+        while (true) {
+            System.out.print(promptMessage);
+            String input = setInput(scan);
+            if (inputValidator.validateInput(input)){
+                return Integer.parseInt(input);
+            } else {
+                System.out.println("Please provide a valid integer.");
+            }
+        }
+    }
 
     private String setInput(Scanner scan) {
         return scan.nextLine();
     }
 
-    public boolean isInputValidInteger(String input) {
-        try {
-            Integer.parseInt(input);
-            return true;
-        } catch (NumberFormatException e) {
-            return false;
-        }
-    }
-
-    private void handleInvalidInput() {
+    private boolean handleInvalidInput() {
         System.out.println("Please provide a valid integer.");
-    }
-
-    public int getInput(Scanner scan, String promptMessage) {
-        while (true) {
-            System.out.print(promptMessage);
-            String input = setInput(scan);
-            if (!isInputValidInteger(input)) {
-                handleInvalidInput();
-            } else {
-                return Integer.parseInt(input);
-            }
-        }
+        return false;
     }
 
     public int setChoice(Scanner scan, String prompt) {
