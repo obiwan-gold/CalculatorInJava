@@ -9,8 +9,8 @@ public class Menu {
         this.menuValidator = new MenuValidator();
     }
 
-    public int setChoice(Scanner scan, String prompt) {
-        System.out.println(prompt);
+    public int getChoice(Scanner scan) {
+        System.out.println("Type the number to select the method: \n 1. Addition \n 2. Subtraction \n 3. Multiplication \n 4. Division \n");
         return scan.nextInt();
     }
 

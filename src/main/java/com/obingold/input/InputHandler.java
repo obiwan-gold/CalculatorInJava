@@ -31,8 +31,4 @@ public class InputHandler {
             System.out.println("Please provide a valid integer");
         }
     }
-
-    public void printResult(int result) {
-        System.out.println("Result: " + result);
-    }
 }
