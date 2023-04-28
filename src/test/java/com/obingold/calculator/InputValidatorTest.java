@@ -1,6 +1,6 @@
 package com.obingold.calculator;
 
-import com.obingold.calculator.InputValidator;
+import com.obingold.input.InputValidator;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;

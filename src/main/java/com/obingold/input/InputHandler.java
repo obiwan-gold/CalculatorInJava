@@ -1,4 +1,4 @@
-package com.obingold.calculator;
+package com.obingold.input;
 
 import java.util.Scanner;
 
