@@ -18,7 +18,7 @@ public class InputHandlerTest {
     @Test
     @DisplayName("Input should be an integer")
     public void whenInputIsInteger() {
-        assertEquals(123,  inputHandler.isInputValidInteger("123"));
+        assertEquals(123, inputHandler.isInputValidInteger("123"));
     }
 
     @Test
