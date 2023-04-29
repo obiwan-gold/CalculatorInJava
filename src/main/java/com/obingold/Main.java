@@ -18,13 +18,13 @@ public class Main {
         int b = inputHandler.getInput(scan, "Provide the second number: ");
 
         // Choose Menu Option
-        int choice = menu.getChoice(scan);
+        int choice = menu.handleChoice(scan);
 
         // Calculate Result
-        int result = calculator.calculate(a, b, choice);
+//        int result = calculator.calculate(a, b, choice);
 
         // Print Result
-        calculator.printResult(result);
+//        calculator.printResult(result);
 
     }
 }

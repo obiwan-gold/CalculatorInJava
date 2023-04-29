@@ -1,21 +1,15 @@
 package com.obingold.menu;
 
 import com.obingold.calculator.Calculator;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter @Setter @NoArgsConstructor
 public class MenuValidator {
     private int selection;
+    private Calculator calculator = new Calculator();
 
-    public int getSelection() {
-        return selection;
-    }
-
-    public void setSelection(int selection) {
-        this.selection = selection;
-    }
-
-    private final Calculator calculator;
-    public MenuValidator(){
-        this.calculator = new Calculator();
-    }
     public int handleChoice(int selection, int a, int b) {
         int result = 0;
         switch (selection) {
